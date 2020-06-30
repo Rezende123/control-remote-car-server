@@ -8,11 +8,11 @@ const command = new Command();
 
 app.use(bodyParser.json());
 
-app.get('/command', (req, res, next) => {
+app.get('/command', (req, res) => {
     res.send(command.getCurrent());
 })
 
-app.post('/command', (req, res, next) => {
+app.post('/command', (req, res) => {
     command.updateCommand(req.body);
 
     res.send(command.getCurrent());
