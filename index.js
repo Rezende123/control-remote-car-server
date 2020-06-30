@@ -8,10 +8,14 @@ const command = new Command();
 
 app.use(bodyParser.json());
 
+app.get('/command', (req, res, next) => {
+    res.send(command.getCurrent());
+})
+
 app.post('/command', (req, res, next) => {
     command.updateCommand(req.body);
 
-    res.send(command);
+    res.send(command.getCurrent());
 });
  
 const server = new WebSocket.Server({ 

@@ -28,6 +28,13 @@ class Command {
         return input != null && input != undefined && typeof input === 'number';
     }
 
+    getCurrent() {
+        return {
+            velocity: this.velocity,
+            direction: this.direction
+        }
+    }
+
     setDirectionByAngle(angle) {
         const scale = (currentMin, currentMax, goalMin, goalMax, input) => {
             const percent = (input - currentMin) / (currentMax - currentMin);
