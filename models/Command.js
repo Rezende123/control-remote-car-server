@@ -29,9 +29,9 @@ class Command {
     }
 
     setDirectionByAngle(angle) {
-        const scale = (yMin, yMax, xMin, xMax, input) => {
-            const percent = (input - yMin) / (yMax - yMin);
-            const output = percent * (xMax - xMin) + xMin;
+        const scale = (currentMin, currentMax, goalMin, goalMax, input) => {
+            const percent = (input - currentMin) / (currentMax - currentMin);
+            const output = percent * (goalMax - goalMin) + goalMin;
             return Math.round(output);
         };
         const direction = scale(
