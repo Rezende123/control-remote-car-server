@@ -15,6 +15,8 @@ class Command {
     set direction(direction) {
         if (this.isValidInput(direction)) {
             this._direction = direction;
+        } else {
+            this._direction = 0;
         }
     }
     get direction() { return this._direction };
@@ -36,6 +38,8 @@ class Command {
     }
 
     setDirectionByAngle(angle) {
+        if (angle === null || angle === undefined) return null;
+
         const scale = (currentMin, currentMax, goalMin, goalMax, input) => {
             const percent = (input - currentMin) / (currentMax - currentMin);
             const output = percent * (goalMax - goalMin) + goalMin;
