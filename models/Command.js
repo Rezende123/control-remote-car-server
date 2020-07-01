@@ -41,9 +41,12 @@ class Command {
             const output = percent * (goalMax - goalMin) + goalMin;
             return Math.round(output);
         };
+        const max = (angle > 180) ? 181 : 180;
+        const min = (angle > 180) ? 360 : 1;
+
         const direction = scale(
-            1,
-            360,
+            min,
+            max,
             this.directionScaleMin,
             this.directionScaleMax,
             angle

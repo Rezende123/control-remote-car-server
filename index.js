@@ -15,6 +15,7 @@ app.get('/command', (req, res) => {
 app.post('/command', (req, res) => {
     command.updateCommand(req.body);
 
+    console.log('[Command is updated]')
     res.send(command.getCurrent());
 });
  
