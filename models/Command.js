@@ -3,7 +3,7 @@ class Command {
     directionScaleMin = -50;
     directionScaleMax = 50;
 
-    _velocity
+    _velocity = 0;
     set velocity(velocity) {
         if (this.isValidInput(velocity)) {
             this._velocity = velocity;
@@ -11,7 +11,7 @@ class Command {
     }
     get velocity() { return this._velocity };
 
-    _direction
+    _direction = 0;
     set direction(direction) {
         if (this.isValidInput(direction)) {
             this._direction = direction;
