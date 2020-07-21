@@ -1,7 +1,7 @@
 class Command {
 
-    directionScaleMin = -50;
-    directionScaleMax = 50;
+    directionScaleMin = 0;
+    directionScaleMax = 180;
 
     _velocity = 0;
     set velocity(velocity) {
@@ -11,12 +11,12 @@ class Command {
     }
     get velocity() { return this._velocity };
 
-    _direction = 0;
+    _direction = 90;
     set direction(direction) {
         if (this.isValidInput(direction)) {
             this._direction = direction;
         } else {
-            this._direction = 0;
+            this._direction = 90;
         }
     }
     get direction() { return this._direction };
