@@ -37,5 +37,9 @@ app.use((req, res) => {
 })
  
 const server = new WebSocket.Server({ 
-    server: app.listen(8080, () => console.log("--Servidor iniciado com sucesso--"))
+    server: app.listen(process.env.PORT || 5000,
+        () => {
+            console.log("--Servidor iniciado com sucesso--")
+            console.log(`--Porta: ${process.env.PORT || 5000}`)
+        })
 });
