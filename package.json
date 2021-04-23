@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "Servidor websocket usando node e express que vai ser o elo de comunicação entre um controle e o carro de controle remoto",
   "main": "index.js",
+  "engines": {
+    "node": "12.20"
+  },
   "scripts": {
-    "start": "nodemon ."
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
